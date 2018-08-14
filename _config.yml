@@ -22,6 +22,7 @@ url: "https://tintypemolly.github.io" # the base hostname & protocol for your si
 twitter_username: TintypeMolly
 github_username:  TintypeMolly
 timezone: "Asia/Seoul"
+lang: ko
 
 # Build settings
 markdown: kramdown
