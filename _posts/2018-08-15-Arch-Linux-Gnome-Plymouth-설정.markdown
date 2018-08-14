@@ -24,14 +24,14 @@ linux라고 하면 보통 켜지자마자 CUI로 로그인 Prompt가 뜨고 로�
 나는 GNOME을 설치했고, gdm도 사용하고 있어서 처음에 grub의 메시지나 udev같은 모듈들의 로딩시 로그들을 제외하면 Windows나 macOS와 딱 보기에는 별로 차이가 없다(라고 약을 팔고 싶다).
 거기서 더 나아가 그 처음 로딩시의 무서운 텍스트들도 없애면 기분이 좋을 것 같아서 조사를 하여 `Plymouth`라는 것이 있다는 것을 알게 되었다.
 
-홈페이지: https://www.freedesktop.org/wiki/Software/Plymouth/
+홈페이지: <https://www.freedesktop.org/wiki/Software/Plymouth/>
 
 Gnome에서 Plymouth의 설치 과정은 대략 이렇다.
 
 1. AUR에서 받아와서 plymouth와 gdm-plymouth를 설치
   yay나 pacaur같은 AUR 패키지 관리 도우미를 사용한다면 gdm-plymouth만 설치하면 의존성으로 plymouth를 설치할 것이다.
   이 때, 2018년 08월 13일 현재 glibc의 버전업에 의해 plymouth가 깨져있기 때문에 해당 레포의 PKGBUILD를 좀 수정해줘야 한다.
-  https://627690.bugs.gentoo.org/attachment.cgi?id=488690 이 링크에 존재하는 패치를 적당한 곳에 위치시킨 뒤,
+  <https://627690.bugs.gentoo.org/attachment.cgi?id=488690> 이 링크에 존재하는 패치를 적당한 곳에 위치시킨 뒤,
   PKGBUILD의 `prepare()` 함수의 마지막 줄에 그 패치를 적용시키는 내용을 추가시키면 된다.
   예를 들어 위 패치를 `/home/foo/sysmacros.patch`에 위치시켰다고 한다면
   `patch -p1 -i /home/foo/sysmacros.path`를 추가해주면 되는 식이다.
@@ -53,12 +53,12 @@ Gnome에서 Plymouth의 설치 과정은 대략 이렇다.
   설정파일을 변경하고 나서 루트 권한으로 `grub-mkconfig -o /boot/grub/grub.cfg` 해줘야 반영된다.
 
 이렇게 하면 grub 화면이 지나가고 나서 udev 로그가 보인 뒤 부팅되게 된다. 스플래시 화면의 생김새는 원하는 plymouth 테마를 적용하면 된다.
-https://www.gnome-look.org/ 라는 웹사이트에서 'Arch Breeze'라는 테마를 적용했는데 상당히 멋진 것같다.
+<https://www.gnome-look.org/> 라는 웹사이트에서 'Arch Breeze'라는 테마를 적용했는데 상당히 멋진 것같다.
 `yay -S plymouth-theme-arch-breeze` 로 설치한 뒤 `sudo plymouth-set-default-theme -R arch-breeze` 를 통해 간단히 적용할 수 있었다.
 
 그리고 남은 grub과 udev 메시지에 대해서인데, 이 둘도 덜 무섭게 보이게 할 수 있다.
 
-https://www.gnome-look.org/ 에는 grub 테마도 있어서 grub을 덜 무섭게 보이게 하는 것은 상당히 간단했다.
+<https://www.gnome-look.org/> 에는 grub 테마도 있어서 grub을 덜 무섭게 보이게 하는 것은 상당히 간단했다.
 그냥 저 홈페이지에서 GUI-ish한 테마를 찾아서 `/etc/default/grub`에서 `GRUB_THEME`으로 지정해주면 끝나는 일이다.
 `Arch silence`라는 이름의 grub 테마를 적용했고 꽤 GUI적으로 보여서 만족했다.
 또 별로 도움되지 않는 메시지도 삭제해버렸는데, `Loading Linux ...` 라든가 `Loading initial ramdisk ...` 같은 메시지가 지저분해 보여서 삭제해버렸다.
@@ -76,4 +76,4 @@ udev는 `starting version 200` 같은 메시지를 찍는데 이게 스플래시
 3. plymouth가 스플래시 화면을 표시하고
 4. 모든 부팅이 완료되면 gdm의 로그인 화면이 반긴다.
 
-이렇게 부팅 과정에서 생 텍스트가 거의 표시되지 않으므로 방구석에서 체제전복적인 사이버 테러를 계획하는 너드 의혹을 조금은 해소할 수 있을 것이다.
+이렇게 하면 부팅 과정에서 생 텍스트가 거의 표시되지 않으므로 방구석에서 체제전복적인 사이버 테러를 계획하는 사람이라는 의혹을 조금은 덜 받을 수 있을 것이다.
