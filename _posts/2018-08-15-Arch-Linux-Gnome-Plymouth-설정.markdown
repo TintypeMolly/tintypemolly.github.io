@@ -31,7 +31,7 @@ Gnome에서 Plymouth의 설치 과정은 대략 이렇다.
 1. AUR에서 받아와서 plymouth와 gdm-plymouth를 설치
   yay나 pacaur같은 AUR 패키지 관리 도우미를 사용한다면 gdm-plymouth만 설치하면 의존성으로 plymouth를 설치할 것이다.
   이 때, 2018년 08월 13일 현재 glibc의 버전업에 의해 plymouth가 깨져있기 때문에 해당 레포의 PKGBUILD를 좀 수정해줘야 한다.
-  <https://627690.bugs.gentoo.org/attachment.cgi?id=488690> 이 링크에 존재하는 패치를 적당한 곳에 위치시킨 뒤,
+  [패치](https://627690.bugs.gentoo.org/attachment.cgi?id=488690)를 적당한 곳에 위치시킨 뒤,
   PKGBUILD의 `prepare()` 함수의 마지막 줄에 그 패치를 적용시키는 내용을 추가시키면 된다.
   예를 들어 위 패치를 `/home/foo/sysmacros.patch`에 위치시켰다고 한다면
   `patch -p1 -i /home/foo/sysmacros.path`를 추가해주면 되는 식이다.
