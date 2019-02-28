@@ -72,64 +72,45 @@ gpg key 정보는 `/etc/apt/trusted.gpg`와 `/etc/trusted.gpg.d/*.gpg`에 저장
 
 다만 gpg key 파일은 읽어서 옮길 수 있게 생기지 않아서 `apt-key` 명령을 이용한다.
 
-### docker key id 파악
-
-`sudo apt-key list` 로 현재 apt에서 가지고 있는 키 목록을 받을 수 있다.
-
-4글자씩 늘어서 있는 줄이 keyid이고 마지막 8글자만 써도 keyid로 사용할 수 있다.
-
-```
-/etc/apt/trusted.gpg
---------------------
-pub   rsa4096 2017-02-22 [SCEA]
-      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
-uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
-sub   rsa4096 2017-02-22 [S]
-```
-
-위와 같은 경우 docker의 gpg key id는 0EBFCD88 이다.
-
-### gpg key export
-
-해당 키를 export하여 적당한 곳에 저장한다.
-
-```
-sudo apt-key export 0EBFCD88 > ~/docker.pub
-```
-
-### delete gpg key
-
-원래 있던 키를 지운다
-
-```
-sudo apt-key del 0EBFCD88
-```
-
-잘 지워졌는지 `sudo apt-key list`로 확인한다.
-
-### reimport gpg key
-
-`--keyring` 옵션을 사용해서 어떤 파일에 해당 gpg key를 기록할 것인지를 지정하여 `add`한다.
-
-```
-sudo apt-key --keyring /etc/apt/trusted.gpg.d/docker.gpg add ~/docker.pub
-```
-
-역시 잘 추가 되었는지 `sudo apt-key list`로 확인한다.
-
-```
-/etc/apt/trusted.gpg.d/docker.gpg
----------------------------------
-pub   rsa4096 2017-02-22 [SCEA]
-      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
-uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
-sub   rsa4096 2017-02-22 [S]
-```
-
-### 정리
-
-잘 되었으면 중간에 저장한 gpg key 파일은 삭제한다.
-
-```
-rm ~/docker.pub
-```
+1. docker key id 파악  
+  `sudo apt-key list` 로 현재 apt에서 가지고 있는 키 목록을 받을 수 있다.  
+  4글자씩 늘어서 있는 줄이 keyid이고 마지막 8글자만 써도 keyid로 사용할 수 있다.
+  ```
+  /etc/apt/trusted.gpg
+  --------------------
+  pub   rsa4096 2017-02-22 [SCEA]
+        9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+  uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
+  sub   rsa4096 2017-02-22 [S]
+  ```
+  위와 같은 경우 docker의 gpg key id는 0EBFCD88 이다.  
+2. gpg key export  
+  해당 키를 export하여 적당한 곳에 저장한다.
+  ```
+  sudo apt-key export 0EBFCD88 > ~/docker.pub
+  ```
+3. delete gpg key  
+  원래 있던 키를 지운다
+  ```
+  sudo apt-key del 0EBFCD88
+  ```
+  잘 지워졌는지 `sudo apt-key list`로 확인한다.
+4. reimport gpg key  
+  `--keyring` 옵션을 사용해서 어떤 파일에 해당 gpg key를 기록할 것인지를 지정하여 `add`한다.
+  ```
+  sudo apt-key --keyring /etc/apt/trusted.gpg.d/docker.gpg add ~/docker.pub
+  ```
+  역시 잘 추가 되었는지 `sudo apt-key list`로 확인한다.
+  ```
+  /etc/apt/trusted.gpg.d/docker.gpg
+  ---------------------------------
+  pub   rsa4096 2017-02-22 [SCEA]
+        9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+  uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
+  sub   rsa4096 2017-02-22 [S]
+  ```
+5. 정리  
+  잘 되었으면 중간에 저장한 gpg key 파일은 삭제한다.
+  ```
+  rm ~/docker.pub
+  ```
