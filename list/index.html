@@ -10,7 +10,7 @@ layout: default
       <a href="{{ post.url }}">{{ post.title }}</a>
       <small>{{ post.date | date: "%F"}}</small>
       <p>
-        {{ post.content | truncate: 20 }}
+        {{ post.content | truncate: 40 }}
       </p>
     </li>
     {% endfor %}
