@@ -11,5 +11,6 @@ layout: default
 {{ content }}
 
 {% if page.tags %}
+  {{ page.tags | inspect }}
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
 {% endif %}
