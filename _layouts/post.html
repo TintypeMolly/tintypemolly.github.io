@@ -5,7 +5,7 @@ layout: default
 <h1>{{ page.title }}</h1>
 <p>
   <span>{{ page.author | default: site.author }}</span>
-  <small>{{ page.date | date: "%FT%T%Z" }}</small>
+  <small>{{ page.date | date: "%FT%T%z" }}</small>
 </p>
 
 {{ content }}
