@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div>
-  <h1>1 페이지</h1>
+  <h1>{{ paginator.page }} 페이지</h1>
   <ul>
     {% for post in paginator.posts %}
     <li>
