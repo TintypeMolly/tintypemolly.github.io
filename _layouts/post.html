@@ -13,7 +13,7 @@ layout: default
 {{ page.tags | inspect }}<br/>
 {{ page.tags.empty? | inspect }}<br/>
 {{ page.tags.length > 0 | inspect }}<br/>
-{{ page.tags | inspect }}<br/>
+{{ page.tags.length | inspect }}<br/>
 {% if page.tags.length > 0 %}
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
 {% endif %}
