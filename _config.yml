@@ -28,5 +28,5 @@ lang: ko
 # Build settings
 theme: jekyll-theme-architect
 
-paginate: 10
+paginate: 5
 paginate_path: "/list/:num/"
