@@ -15,31 +15,14 @@
 # in the templates via {{ site.myvariable }}.
 title: TintypeMolly's Blog
 email: tintypemolly@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Blog on stuffs
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tintypemolly.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+description: TintypeMolly's Blog
+baseurl: '' # the subpath of your site, e.g. /blog
+url: 'https://tintypemolly.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:year/:month/:day/:title:output_ext
 twitter_username: TintypeMolly
-github_username:  TintypeMolly
-timezone: "Asia/Seoul"
+github_username: TintypeMolly
+timezone: 'Asia/Seoul'
 lang: ko
 
 # Build settings
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-include-cache
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
-
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
+theme: jekyll-theme-architect

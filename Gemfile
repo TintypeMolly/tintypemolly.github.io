@@ -9,16 +9,3 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll"
-
-# Theme
-gem "minima"
-
-# Plugins
-group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-gist"
-  gem "jekyll-include-cache"
-  gem "jekyll-sitemap"
-  gem "jekyll-paginate"
-  gem "jemoji"
-end
