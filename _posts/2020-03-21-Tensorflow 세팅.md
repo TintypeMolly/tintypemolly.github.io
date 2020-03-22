@@ -10,7 +10,7 @@ tags:
 
 ## 요약
 
-컴퓨터가 매우 좋은 것이 아니라면 Colab을 쓰는 것이 좋습니다.
+컴퓨터가 매우 좋은 것이 아니라면 Google Colab을 쓰는 것이 좋습니다.
 Linux에서의 설정이 Windows보다 쉽습니다.
 
 ## ML Framework
