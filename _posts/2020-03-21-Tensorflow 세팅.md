@@ -22,7 +22,7 @@ Tensorflow는 Google 검색이나 Github stars 수를 봤을 때 가장 유명�
 
 Tensorflow를 NVIDIA GPU를 이용해서 실행하기 위해서는 CUDA와 cuDNN을 설치해야 합니다.
 그런데 무턱대고 최신버전을 설치하면 안 된다는 것을 최신버전을 설치하고 나서야 알게 되었습니다.
-ML을 공부하고 있는 후배님의 감사한 조언에 따르면 Tensorflow 버전을 먼저 고르고 거기에 맞는 CUDA와 cudnn 버전을 설치하는 것이 가장 간편한 방법이라고 합니다.
+ML을 공부하고 있는 후배님의 감사한 조언에 따르면 Tensorflow 버전을 먼저 고르고 거기에 맞는 CUDA와 cuDNN 버전을 설치하는 것이 가장 간편한 방법이라고 합니다.
 Tensorflow의 버전에 따른 CUDA와 cuDNN 버전 테이블은 [Linux](https://www.tensorflow.org/install/source#linux), [Windows](https://www.tensorflow.org/install/source_windows#gpu)에 나와 있습니다.
 
 제가 공부를 시작한 시점에서 사용한 버전은 Tensorflow 2.1, CUDA 10.1, cuDNN이 7.6 버전이었습니다.
@@ -48,7 +48,7 @@ Tensorflow까지 설치된 이미지가 필요하다면 [tensorflow/tensorflow](
 
 Windows 머신에서는 docker를 사용해도 그 환경이 vm 속이기 때문에 CUDA를 사용할 수 있는 방법이 없었습니다.
 그냥 홈페이지에서 CUDA와 cuDNN을 다운받아서 정직하게 설치했습니다.
-CUDA는 CUDA만 설치하는 것이 아니라 절대로 쓸 일 없을 것 같은 잡다한 드라이버를 모두 설치하게 해서 고통스러웠습니다만 어쩔 수 없었습니다.
+CUDA는 CUDA만 설치하는 것이 아니라 절대로 쓸 일 없을 것 같은 잡다한 프로그램들을 설치하게 해서 고통스러웠습니다만 어쩔 수 없었습니다.
 cuDNN의 경우는 조금 더 깔끔해서 압축을 풀고 적당한 곳에 놓아둔 뒤, dll을 가지고 있는 경로를 `PATH`에 추가해주면 됩니다.
 저는 `%HOME%\cuda` 에 압축을 풀어두고 `%HOME%\cuda\bin`을 `PATH`에 추가했습니다.
 
