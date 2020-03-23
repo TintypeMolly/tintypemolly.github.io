@@ -1,3 +1,1 @@
----
-redirect_to: /list
----
+Hello, blog!
