@@ -1,13 +1,13 @@
 title: TintypeMolly's Blog
 email: tintypemolly@gmail.com
 description: TintypeMolly's Blog
-baseurl: ''
-url: 'https://tintypemolly.github.io'
+baseurl: ""
+url: "https://tintypemolly.github.io"
 permalink: /:year/:month/:day/:title:output_ext
 twitter_username: TintypeMolly
 github_username: TintypeMolly
 author: TintypeMolly
-timezone: 'Asia/Seoul'
+timezone: "Asia/Seoul"
 lang: ko
 
 theme: minima
@@ -16,4 +16,4 @@ plugins:
   - jekyll-redirect-from
 
 paginate: 5
-paginate_path: '/list/:num/'
+paginate_path: "/list/:num/"
