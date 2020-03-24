@@ -12,8 +12,5 @@ lang: ko
 
 theme: minima
 
-plugins:
-  - jekyll-redirect-from
-
 paginate: 5
 paginate_path: "/list/:num/"
