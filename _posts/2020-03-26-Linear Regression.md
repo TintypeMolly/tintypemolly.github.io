@@ -48,6 +48,7 @@ def hypothesis():
     return x * W + b
 
 
+@tf.function
 def cost():
     return tf.reduce_mean(tf.square(hypothesis() - y))
 
