@@ -6,6 +6,7 @@ layout: post
 tags:
   - dev
   - ml
+  - tensorflow
 ---
 
 ## 요약

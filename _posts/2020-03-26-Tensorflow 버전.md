@@ -1,11 +1,12 @@
 ---
-title: "Linear Regression"
-date: 2020-03-26 12:13:00 +0900
+title: "Tensorflow 버전"
+date: 2020-03-26 18:20:00 +0900
 category: dev
 layout: post
 tags:
   - dev
   - ml
+  - tensorflow
 ---
 
 ## Tensorflow 2 Migration
@@ -78,7 +79,7 @@ Tensorflow 2 버전에서는 Tensorflow의 저수준 API를 직접 사용하기 
   allowfullscreen
 ></iframe>
 
-Keras는 Tensorboard 등의 기타 도구들과도 쉽게 연동되고 있기 때문에
+Keras는 Tensorboard 등의 기타 도구들과도 쉽게 연동되기 때문에
 사용법을 좀 더 열심히 공부해서 익숙해지려고 합니다.
 
 Keras를 사용해서도 비슷하게 Linear Regression 하는 코드를 작성해보았습니다.
