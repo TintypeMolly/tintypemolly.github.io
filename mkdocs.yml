@@ -1,2 +1,5 @@
 site_name: TintypeMolly's Blog
 site_url: https://tintypemolly.github.io/
+nav:
+  - Home: index.md
+  - About: about.md
